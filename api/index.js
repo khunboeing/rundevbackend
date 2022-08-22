@@ -20,9 +20,10 @@ if (config.isVercel) {
 
 //midddleware
 app.use(
-  cors({
-    origin: process.env.ORIGIN,
-  })
+  cors()
+  // cors({
+  //   origin: process.env.ORIGIN,
+  // })
 );
 app.use(morgan("dev"), bodyParser.json({ limit: "30mb", extended: true }));
 
