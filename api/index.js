@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import userRouter from "../Routes/UserRouter.js";
 import login from "../Routes/Login.js";
+import mongoose from "mongoose";
 
 import config from "../config.js";
 
