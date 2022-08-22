@@ -15,8 +15,8 @@ export async function createRundiary(req, res) {
   const userId = req.params.userId; //เอาไปสร้างให้ใคร
   const newRundiary = req.body; //ข้อมูลใหม่ที่จะเอามาสร้าง
   const createdDiary = await RundiaryModel.create(newRundiary); //create card
+  console.log(createdDiary);
   const user = await UserModel.findById(userId); // user that i want to create a card
-  console.log(user);
   user.rundiary = [createdDiary._id, ...user.rundiary];
   await user.save();
   res.status(200).json({ message: "Create Rundiary Complete" });

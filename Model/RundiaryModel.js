@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const rundiarySchema = mongoose.Schema({
   name: String,
-  date: Date,
+  date: { type: Date, default: Date.now() },
   distance: Number,
   location: String,
   motivate: String,
