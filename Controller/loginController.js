@@ -11,6 +11,7 @@ export const login = async (req, res) => {
   });
   if (user) {
     //if it's match, user can enter to web app
+    //send Id back to front
     return res.status(200).json({ userId: user._id });
   } else {
     //if it's dosen't match, user can't enter to web app
@@ -19,10 +20,11 @@ export const login = async (req, res) => {
 };
 
 export const signUp = async (req, res) => {
-  // recived new account from client
+  // recived new account from frontend
   const newUser = req.body;
   console.log(newUser);
   // check the exists one
+  //query user
   const existsUser = await UserModel.findOne({
     "auth.email": newUser.auth.email,
   });
